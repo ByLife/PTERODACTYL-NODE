@@ -1,11 +1,6 @@
 import { AxiosResponseHeaders, AxiosRequestConfig, AxiosResponse} from "axios"
-import internal from "stream";
-import { Config } from "../../../config/config"
-import { Request } from "../../request"
 
-
-
-// Server Listing Interface
+// Server Listing Interface [1]
 
 export interface ServerList<T> extends AxiosResponse  {
   data: ServerListData;
@@ -43,11 +38,33 @@ export interface ServerListAttribute {
     nest: number,
     egg: number,
     container: Array<Object>,
-    updated_at: string,
-    created_at: string,
+    updated_at: Date,
+    created_at: Date,
 }
 
-export interface CreateServer {
+// Server Details Interface [2]
+
+export interface ServerDetails extends AxiosResponse {
+    data: ServerListDataArray;
+    status: number;
+    statusText: string;
+    headers: AxiosResponseHeaders;
+    config: AxiosRequestConfig<T>;
+    request?: any;
+}
+
+// Create Server Interface [3]
+
+export interface CreateServer extends AxiosResponse {
+    data: CreateServerData;
+    status: number;
+    statusText: string;
+    headers: AxiosResponseHeaders;
+    config: AxiosRequestConfig<T>;
+    request?: any;
+}
+
+export interface CreateServerData {
     name: string,
     user: number,
     egg: number,

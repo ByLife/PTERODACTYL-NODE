@@ -1,9 +1,9 @@
-import { Config } from "../../../config/config"
-import { Request } from "../../request/"
-import {ServerList} from "./interfaces"
+import { Config } from "../../../config"
+import { Request } from "../../request"
+import {ServerList} from "./server"
 
 export async function ServerList(): Promise<ServerList<any>> {
-    return await Request("/application/servers", {
+    return await Request('get',"/application/servers", {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',

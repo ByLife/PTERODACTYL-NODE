@@ -1,5 +1,5 @@
-import { ServerDetails } from "./server_details";
-import { ServerList } from "./server_list";
+import { ServerDetails } from "./details.server";
+import { ServerList } from "./list.server";
 
 export var server = {
     get: {

@@ -6,7 +6,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Request = void 0;
 const axios_1 = __importDefault(require("axios"));
 const config_1 = require("../../config/config");
-const Request = (PATH, CONFIG) => {
-    return axios_1.default.get(config_1.Config.PTEROAPI.URL + PATH, CONFIG);
+const Request = (REQUESTTYPE, PATH, CONFIG) => {
+    switch (REQUESTTYPE) {
+        case "post":
+            return axios_1.default.post(config_1.Config.PTEROAPI.URL + PATH, CONFIG);
+        case "get":
+            return axios_1.default.get(config_1.Config.PTEROAPI.URL + PATH, CONFIG);
+        case "patch":
+            return axios_1.default.patch(config_1.Config.PTEROAPI.URL + PATH, CONFIG);
+        case "delete":
+            return axios_1.default.delete(config_1.Config.PTEROAPI.URL + PATH, CONFIG);
+    }
 };
 exports.Request = Request;

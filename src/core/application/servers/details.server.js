@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ServerList = void 0;
+exports.ServerDetails = void 0;
 const config_1 = require("../../../config/config");
-const request_1 = require("../../request/request");
-async function ServerList() {
-    return await (0, request_1.Request)("/application/servers", {
+const index_1 = require("../../request/index");
+async function ServerDetails(serverID) {
+    return await (0, index_1.Request)('get', `/application/servers/${serverID}`, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -13,4 +13,4 @@ async function ServerList() {
         }
     });
 }
-exports.ServerList = ServerList;
+exports.ServerDetails = ServerDetails;

@@ -1,11 +1,11 @@
 import { AxiosResponse } from "axios"
 import { Config } from "../../../config/config"
-import { Request } from "../../request"
-import {} from "./interfaces.d"
+import { Request } from "../../request/index"
+import { } from "./nodes"
 
-export async function ServerDetails(serverID: number | null): Promise<AxiosResponse>
+export async function NodesList(): Promise<AxiosResponse>
 { 
-    return await Request(`/application/servers/${serverID}`, {
+    return await Request('get',`/application/nodes`, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
