@@ -16,6 +16,8 @@ const Request = (REQUESTTYPE, PATH, CONFIG) => {
             return axios_1.default.patch(config_1.Config.PTEROAPI.URL + PATH, CONFIG);
         case "delete":
             return axios_1.default.delete(config_1.Config.PTEROAPI.URL + PATH, CONFIG);
+        case "put":
+            return axios_1.default.put(config_1.Config.PTEROAPI.URL + PATH, CONFIG);
     }
 };
 exports.Request = Request;

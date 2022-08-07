@@ -2,7 +2,7 @@ import { AxiosResponseHeaders, AxiosRequestConfig, AxiosResponse} from "axios"
 
 // Server Listing Interface [1]
 
-export interface ServerList<T> extends AxiosResponse  {
+export interface ServerList<T = any> extends AxiosResponse  {
   data: ServerListData;
   status: number;
   statusText: string;

@@ -2,9 +2,9 @@ import { Config } from "../../../config/config"
 import { Request } from "../../request/index"
 import { ServerDetails } from "./server"
 
-export async function ServerDetails(serverID: number | null): Promise<ServerDetails>
+export async function ServerDetails(server_id: number | null): Promise<ServerDetails>
 { 
-    return await Request('get',`/application/servers/${serverID}`, {
+    return await Request('get',`/application/servers/${server_id}`, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',

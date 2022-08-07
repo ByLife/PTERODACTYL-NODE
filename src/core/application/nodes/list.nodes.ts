@@ -1,9 +1,9 @@
 import { AxiosResponse } from "axios"
 import { Config } from "../../../config/config"
 import { Request } from "../../request/index"
-import { } from "./nodes"
+import { NodesList } from "./nodes"
 
-export async function NodesList(): Promise<AxiosResponse>
+export async function NodesList(): Promise<NodesList>
 { 
     return await Request('get',`/application/nodes`, {
         headers: {
