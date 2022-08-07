@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios"
 import { Config } from "../../../config"
 import { Request } from "../../request"
-import { NodeDetails } from "./nodes"
+import { NodeConfiguration, NodeDetails } from "./nodes"
 
 
 async function NodeDetails(nodes_id: number): Promise<NodeDetails> {
@@ -15,7 +15,7 @@ async function NodeDetails(nodes_id: number): Promise<NodeDetails> {
     })
 }
 
-async function NodeConfiguration(nodes_id: number): Promise<NodeDetails> {
+async function NodeConfiguration(nodes_id: number): Promise<NodeConfiguration> {
     return  Request('get',`/application/nodes/${nodes_id}/configuration`, {
         headers: {
             'Accept': 'application/json',

@@ -94,34 +94,43 @@ export interface NodeDetailsData {
 
 // Node Configuration Interface [3]
 
-export interface Ssl {
+export interface NodeConfiguration<T = any> extends AxiosResponse  {
+  data: NodeConfigurationData;
+  status: number;
+  statusText: string;
+  headers: AxiosResponseHeaders;
+  config: AxiosRequestConfig<T>;
+  request?: any;
+}
+
+export interface NodeConfigurationDataSsl {
   enabled: boolean;
   cert: string;
   key: string;
 }
 
-export interface Api {
+export interface NodeConfigurationDataApi {
   host: string;
   port: number;
-  ssl: Ssl;
+  ssl: NodeConfigurationDataSsl;
   upload_limit: number;
 }
 
-export interface Sftp {
+export interface NodeConfigurationDataSftp {
   bind_port: number;
 }
 
-export interface System {
+export interface NodeConfigurationDataSystem {
   data: string;
-  sftp: Sftp;
+  sftp: NodeConfigurationDataSftp;
 }
 
-export interface RootObject {
+export interface NodeConfigurationData {
   debug: boolean;
   uuid: string;
   token_id: string;
   token: string;
-  api: Api;
-  system: System;
+  api: NodeConfigurationDataApi;
+  system: NodeConfigurationDataSystem;
   remote: string;
 }
