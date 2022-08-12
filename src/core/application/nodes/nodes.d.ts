@@ -134,3 +134,28 @@ export interface NodeConfigurationData {
   system: NodeConfigurationDataSystem;
   remote: string;
 }
+
+// Create Node Interface [4]
+
+export interface NodeCreate<T = any> extends AxiosResponse  {
+  data: NodeCreateData;
+  status: number;
+  statusText: string;
+  headers: AxiosResponseHeaders;
+  config: AxiosRequestConfig<T>;
+  request?: any;
+}
+
+export interface NodeCreateData extends AxiosRequestConfig {
+  name: string;
+  location_id: number;
+  fqdn: string;
+  scheme: string;
+  memory: number;
+  memory_overallocate: number;
+  disk: number;
+  disk_overallocate: number;
+  upload_size: number;
+  daemon_sftp: number;
+  daemon_listen: number;
+}

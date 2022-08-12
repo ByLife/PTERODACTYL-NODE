@@ -1,29 +1,13 @@
-import { AxiosResponse } from "axios"
-import { Config } from "../../../config"
-import { Request } from "../../request"
+import { headers, Request } from "../../request"
 import { NodeConfiguration, NodeDetails } from "./nodes"
 
 
 async function NodeDetails(nodes_id: number): Promise<NodeDetails> {
-    return  Request('get',`/application/nodes/${nodes_id}`, {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${Config.PTEROAPI.KEY}`,
-            'Cookie': `pterodactyl_session=${Config.PTEROAPI.SESSION}`
-            }
-    })
+    return  Request('get',`/application/nodes/${nodes_id}`, headers)
 }
 
 async function NodeConfiguration(nodes_id: number): Promise<NodeConfiguration> {
-    return  Request('get',`/application/nodes/${nodes_id}/configuration`, {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${Config.PTEROAPI.KEY}`,
-            'Cookie': `pterodactyl_session=${Config.PTEROAPI.SESSION}`
-            }
-    })
+    return  Request('get',`/application/nodes/${nodes_id}/configuration`, headers)
 }
 
 export const nodeDetails = {
