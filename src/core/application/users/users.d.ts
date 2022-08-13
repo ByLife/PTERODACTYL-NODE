@@ -38,3 +38,14 @@ export interface UserCreate extends AxiosRequestConfig {
     first_name: string,
     last_name: string,
 }
+
+// User Patch Interface [3]
+
+export interface UserPatch extends AxiosRequestConfig {
+    email: string,
+    username: string,
+    first_name: string,
+    last_name: string,
+    language: string,
+    password: string,
+}
