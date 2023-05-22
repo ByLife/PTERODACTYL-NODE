@@ -14,11 +14,25 @@ export interface ServerList<T = any> extends AxiosResponse  {
 export interface ServerListData {
     object: string,
     data: Array<ServerListDataArray>,
+    meta: ServerListMeta,
 }
 
 export interface ServerListDataArray {
     object: string,
     attributes: ServerListAttribute, 
+}
+
+export interface ServerListMeta {
+    pagination: ServerListPagination,
+}
+
+export interface ServerListPagination {
+    total: number,
+    count: number,
+    per_page: number,
+    current_page: number,
+    total_pages: number,
+    links: Object
 }
 
 export interface ServerListAttribute {

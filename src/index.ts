@@ -1,3 +1,3 @@
-import { client } from "./core";
+import { Client } from "./core"
 
-export default client
+export default Client
