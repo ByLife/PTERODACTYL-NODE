@@ -3,8 +3,13 @@ import { nodes, server, users } from "./application"
 export * from "./request"
 export * from "./application"
 
-export var client = {
-    servers: server,
-    nodes: nodes,
-    users: users,
+
+export class client {
+    static servers = server
+    static nodes = nodes
+    static users = users
+
+    static URI: string = ""
+    static KEY: string = ""
+    static SESSION: string = ""
 }
