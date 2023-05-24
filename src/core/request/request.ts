@@ -21,9 +21,8 @@ export const Request = (REQUESTTYPE: "post" | "get" | "patch" | "delete" | "put"
 
 export const headers = {
     headers: {
-        'Accept': 'application/json',
+        'Accept': 'Application/vnd.pterodactyl.v1+json',
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.PTERO_API_KEY}`,
-        'Cookie': `pterodactyl_session=${process.env.PTERO_SESSION}`
         }
 }

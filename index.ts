@@ -13,8 +13,9 @@ async function main() {
 
         if(!clients) return console.log("No clients found")
 
+
         clients.data.forEach(client => {
-            console.log(client.attributes.username, " ", client.attributes.email, " ", client.attributes.first_name, " ", client.attributes.last_name)
+            console.log(client.attributes.username, " ", client.attributes.email, " ", client.attributes.first_name, " ", client.attributes.last_name, " ID: ", client.attributes.id)
         })
     } catch (error) {
         console.log(error)
