@@ -1,5 +1,6 @@
 import PTERO from "./src"
 import { Client } from "./src/core"
+import { ListReponse, ListReponseData } from "./src/core/application/eggs/list.interface"
 
 async function main() { 
     try {
@@ -13,6 +14,13 @@ async function main() {
 
         if(!clients) return console.log("No clients found")
 
+        const egg = await Client.eggs.list()
+
+        if(!egg) return console.log("No eggs found")
+
+        egg.data.forEach((egg: ListReponseData) => {
+            console.log(egg)
+        })
 
         clients.data.forEach(client => {
             console.log(client.attributes.username, " ", client.attributes.email, " ", client.attributes.first_name, " ", client.attributes.last_name, " ID: ", client.attributes.id)

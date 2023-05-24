@@ -4,14 +4,16 @@ export class PTERO {
     static SESSION: string = ""
 }
 
-import { nodes, server, users } from "./application"
+import { nodes, server, users, eggs} from "./application"
 
 export * from "./request"
 export * from "./application"
+
 
 export class Client {
     static nodes = nodes
     static servers = server
     static users = users
+    static eggs = eggs
 }
 
